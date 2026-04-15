@@ -12,18 +12,19 @@ const OnlineFoodDelivery = () => {
         Restaurants with online food delivery in Delhi
       </h1>
 
-      <div className="grid grid-cols-4 gap-6 mt-8">
+      {/* Responsive Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
         {onFoodDelevery.map((item) => (
           <div
             key={item.id}
             onClick={() => navigate(`/restaurant/${item.id}`)}
-            className="cursor-pointer w-[270px] rounded-2xl bg-white shadow hover:scale-[0.97] transition duration-200"
+            className="cursor-pointer w-full rounded-2xl bg-white shadow hover:scale-[0.97] transition duration-200"
           >
             <div className="relative h-[150px] rounded-2xl overflow-hidden">
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-[180px] object-cover"
+                className="w-full h-full object-cover"
               />
 
               {item.offer && (
